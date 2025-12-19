@@ -61,6 +61,10 @@ triggers:
 - 第 1 個儲存格作為指標值。
 - 第 2 個儲存格作為閾值（可選）。
 
+範例結果：
+
+![Azure Log Analytics 查詢範例](/img/azure-log-analytics-scaler-query-example.png)
+
 ### 驗證參數
 
 **基於服務主體的驗證：**
