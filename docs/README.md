@@ -17,7 +17,7 @@ brew install mdbook
 ### 建構文件
 
 ```bash
-cd zh-tw
+cd docs
 mdbook build
 ```
 
@@ -26,7 +26,7 @@ mdbook build
 ### 本地預覽
 
 ```bash
-cd zh-tw
+cd docs
 mdbook serve
 ```
 
@@ -35,7 +35,7 @@ mdbook serve
 ## 專案結構
 
 ```
-zh-tw/
+docs/
 ├── book.toml          # mdbook 設定檔
 ├── README.md          # 本說明文件
 └── src/
@@ -53,4 +53,4 @@ zh-tw/
 
 ## 部署
 
-可使用 GitHub Actions 自動部署到 GitHub Pages。參見 `.github/workflows/deploy-zh-tw.yml`。
+可使用 GitHub Actions 自動部署到 GitHub Pages。參見 `.github/workflows/deploy-docs.yml`。

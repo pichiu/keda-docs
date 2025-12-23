@@ -1,11 +1,11 @@
-name: Deploy zh-tw mdbook to GitHub Pages
+name: Deploy docs mdbook to GitHub Pages
 
 on:
   push:
     branches:
       - dev
     paths:
-      - 'zh-tw/**'
+      - 'docs/**'
   workflow_dispatch:
 
 permissions:
@@ -14,7 +14,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages-zh-tw"
+  group: "pages-docs"
   cancel-in-progress: false
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
           mdbook-version: 'latest'
 
       - name: Build mdBook
-        working-directory: zh-tw
+        working-directory: docs
         run: mdbook build
 
       - name: Setup Pages
@@ -39,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './zh-tw/book'
+          path: './docs/book'
 
   deploy:
     environment:

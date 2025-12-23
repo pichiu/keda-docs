@@ -11,4 +11,4 @@ bin/
 tmp/
 
 # mdbook build output
-zh-tw/book/
+docs/book/
