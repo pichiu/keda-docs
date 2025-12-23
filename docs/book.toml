@@ -11,4 +11,4 @@ build-dir = "book"
 [output.html]
 default-theme = "light"
 preferred-dark-theme = "navy"
-git-repository-url = "https://github.com/kedacore/keda-docs"
+git-repository-url = "https://github.com/pichiu/keda-docs"
