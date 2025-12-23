@@ -3,7 +3,6 @@ title = "KEDA 文件 - 繁體中文版"
 authors = ["KEDA Community"]
 description = "Kubernetes 事件驅動自動擴縮器 (KEDA) 繁體中文文件"
 language = "zh-TW"
-multilingual = false
 src = "src"
 
 [build]
