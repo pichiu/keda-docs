@@ -10,5 +10,5 @@ resources/
 bin/
 tmp/
 
-# mdbook build output
-docs/book/
+# Hugo build output
+public/

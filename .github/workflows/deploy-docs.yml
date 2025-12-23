@@ -1,11 +1,9 @@
-name: Deploy docs mdbook to GitHub Pages
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
     branches:
       - dev
-    paths:
-      - 'docs/**'
   workflow_dispatch:
 
 permissions:
@@ -14,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages-docs"
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
@@ -23,15 +21,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v2
         with:
-          mdbook-version: 'latest'
+          submodules: recursive
+          fetch-depth: 0
 
-      - name: Build mdBook
-        working-directory: docs
-        run: mdbook build
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build Hugo
+        run: hugo --minify --baseURL "https://pichiu.github.io/keda-docs/"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -39,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './docs/book'
+          path: './public'
 
   deploy:
     environment:
