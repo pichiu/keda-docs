@@ -8,7 +8,8 @@
 {{ $img           := "img/logos/keda-icon-color.png" | absURL }}
 {{ $imgAlt        := printf "%s color logo" site.Title }}
 {{ $locale        := site.Params.locale }}
-{{ $version       := index (split .File.Path "/") 1 }}
+{{ $version       := "" }}
+{{ with .File }}{{ $version = index (split .Path "/") 1 }}{{ end }}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
