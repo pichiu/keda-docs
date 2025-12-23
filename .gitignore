@@ -9,3 +9,6 @@ resources/
 # Link checker artifacts
 bin/
 tmp/
+
+# mdbook build output
+zh-tw/book/
